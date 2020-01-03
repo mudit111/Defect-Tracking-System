@@ -21,7 +21,7 @@ public class LoginServlet extends HttpServlet {
 		PasswordBl passwordBl = new PasswordBlImpl();
 		Password password = new Password();
 		try {
-			password = passwordBl.getPassword(request.getParameter("password").trim());
+			password = passwordBl.getPassword(request.getParameter("password"));
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
@@ -42,5 +42,4 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }

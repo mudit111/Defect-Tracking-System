@@ -14,7 +14,7 @@
 %>
 <head>
 <meta charset="ISO-8859-1">
-<title>Search All Issues</title>
+<title>All Issues</title>
 </head>
 <body>
 	<h1>All Issues</h1>

@@ -25,7 +25,13 @@ public class DeleteIssue extends HttpServlet {
 		} else {
 			IssueBl issueBl = new IssueBlImpl();
 			try {
-				issueBl.deleteIssue(request.getParameter("issueName"));
+				if (issueBl.deleteIssue(request.getParameter("issueName")) == 1) {
+					requestDispatcher = request.getRequestDispatcher("success.jsp");
+					requestDispatcher.forward(request, response);
+				} else {
+					requestDispatcher = request.getRequestDispatcher("failure.jsp");
+					requestDispatcher.forward(request, response);
+				}
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			} catch (SQLException e) {

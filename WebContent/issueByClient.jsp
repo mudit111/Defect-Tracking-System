@@ -14,7 +14,7 @@
 %>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Issues By Client</title>
 </head>
 <body>
 	<h1>Issues By Client</h1>

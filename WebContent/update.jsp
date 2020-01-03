@@ -20,8 +20,7 @@
 			<option value="bug">Bug</option>
 			<option value="enhancement">Enhancement</option>
 			<option value="work request">Work Request</option>
-		</select> <br>
-		<br> <input type="submit" value="Update Issue">
+		</select> <br> <br> <input type="submit" value="Update Issue">
 	</form>
 </body>
 </html>

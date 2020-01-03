@@ -29,7 +29,13 @@ public class UpdateIssue extends HttpServlet {
 			issue.setIssueType(request.getParameter("issueType"));
 			IssueBl issueBl = new IssueBlImpl();
 			try {
-				System.out.println(issueBl.updateIssue(issue));
+				if (issueBl.updateIssue(issue) == 1) {
+					requestDispatcher = request.getRequestDispatcher("success.jsp");
+					requestDispatcher.forward(request, response);
+				} else {
+					requestDispatcher = request.getRequestDispatcher("failure.jsp");
+					requestDispatcher.forward(request, response);
+				}
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			} catch (SQLException e) {
@@ -42,5 +48,4 @@ public class UpdateIssue extends HttpServlet {
 			throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }

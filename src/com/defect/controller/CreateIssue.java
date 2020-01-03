@@ -29,10 +29,13 @@ public class CreateIssue extends HttpServlet {
 			IssueBl issueBl = new IssueBlImpl();
 			try {
 				issueBl.addIssue(issue);
+				requestDispatcher = request.getRequestDispatcher("success.jsp");
+				requestDispatcher.forward(request, response);
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			} catch (SQLException e) {
-				e.printStackTrace();
+				requestDispatcher = request.getRequestDispatcher("failure.jsp");
+				requestDispatcher.forward(request, response);
 			}
 		}
 	}

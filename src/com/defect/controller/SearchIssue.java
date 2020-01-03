@@ -40,6 +40,10 @@ public class SearchIssue extends HttpServlet {
 				requestDispatcher = request.getRequestDispatcher("searchAllIssues.jsp");
 				requestDispatcher.forward(request, response);
 				break;
+			case "Logout":
+				requestDispatcher = request.getRequestDispatcher("logout.jsp");
+				requestDispatcher.forward(request, response);
+				break;
 
 			}
 		}

@@ -14,7 +14,7 @@
 </head>
 <body>
 	<form action="issueByProject.jsp" method="post">
-		Client: <input type="text" name="project" required="required" /> <input
+		Project: <input type="text" name="project" required="required" /> <input
 			type="submit" value="Search">
 	</form>
 </body>

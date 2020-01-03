@@ -36,6 +36,10 @@ public class UserMenuServlet extends HttpServlet {
 				requestDispatcher = request.getRequestDispatcher("/search.jsp");
 				requestDispatcher.forward(request, response);
 				break;
+			case "Logout":
+				requestDispatcher = request.getRequestDispatcher("/logout.jsp");
+				requestDispatcher.forward(request, response);
+				break;
 			}
 		}
 	}

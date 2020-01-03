@@ -33,8 +33,7 @@
 				IssueBl issueBl = new IssueBlImpl();
 				int i = 1;
 				Issue issue = issueBl.getIssue(request.getParameter("name"));
-				if (issue!=null)
-				{
+				if (issue != null) {
 			%>
 			<tr>
 				<td><%=i++%></td>
