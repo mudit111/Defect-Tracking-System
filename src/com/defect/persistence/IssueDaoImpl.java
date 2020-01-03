@@ -141,4 +141,26 @@ public class IssueDaoImpl implements IssueDao {
 		connection.close();
 		return status;
 	}
+
+	@Override
+	public List<Issue> getAllRecords() throws ClassNotFoundException, SQLException {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		connection = DbConnection.getDatabaseConnection();
+		List<Issue> issueList = null;
+		preparedStatement = connection.prepareStatement("select * from Issue");
+		resultSet = preparedStatement.executeQuery();
+		issueList = new ArrayList<>();
+		while (resultSet.next()) {
+			Issue issue = new Issue();
+			issue.setIssueName(resultSet.getString("name"));
+			issue.setIssueType(resultSet.getString("type"));
+			issue.setIssueClient(resultSet.getString("client"));
+			issue.setIssueProject(resultSet.getString("project"));
+			issueList.add(issue);
+		}
+		connection.close();
+		return issueList;
+	}
 }

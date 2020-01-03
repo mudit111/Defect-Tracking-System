@@ -21,4 +21,6 @@ public interface IssueDao {
 
 	int deleteRecord(String issueName) throws ClassNotFoundException, SQLException;
 
+	List<Issue> getAllRecords() throws ClassNotFoundException, SQLException;
+
 }

@@ -49,4 +49,9 @@ public class IssueBlImpl implements IssueBl {
 	public int deleteIssue(String issueName) throws ClassNotFoundException, SQLException {
 		return issueDao.deleteRecord(issueName);
 	}
+
+	@Override
+	public List<Issue> getAllIssues() throws ClassNotFoundException, SQLException {
+		return issueDao.getAllRecords();
+	}
 }

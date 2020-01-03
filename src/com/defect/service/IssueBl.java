@@ -21,4 +21,6 @@ public interface IssueBl {
 
 	int deleteIssue(String issueName) throws ClassNotFoundException, SQLException;
 
+	List<Issue> getAllIssues()  throws ClassNotFoundException, SQLException;
+
 }
